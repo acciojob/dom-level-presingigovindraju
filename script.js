@@ -1,12 +1,15 @@
-//your JS code here. If required.let levelElement = document.getElementById("level");
+// Get the element with the id "level"
+let levelElement = document.getElementById("level");
+
+// Initialize the DOM level to 1
 let level = 1;
 
-while (true) {
-    if (levelElement.tagName === "HTML" || !levelElement.parentNode) {
-        break;
-    }
-    levelElement = levelElement.parentNode;
+// Keep traversing up the DOM tree and increment the level until we reach the HTML root element
+while (levelElement !== document.documentElement) {
+    levelElement = levelElement.parentElement;
     level++;
 }
 
+// Display the DOM level using the alert function
 alert(`The level of the element is: ${level}`);
+
